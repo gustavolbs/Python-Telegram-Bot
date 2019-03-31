@@ -8,11 +8,11 @@
 - [x] Create events to lists
 - [x] Delete events from lists
 - [x] Deploy on Heroku
+- [x] Persist lists
 - [ ] Delete lists
 - [ ] Clear a list
 - [ ] Show lists individually
 - [ ] Notify about day events
-- [ ] Persist lists
 
 ## Steps to code
 * Activate Venv ```source env/bin/activate.sh```
@@ -21,4 +21,4 @@
 * Export Token ```export BOT_API_TOKEN="bot_token"```
 * Import it ```import os```
 * Declare it on a variable ```token = os.environ['BOT_API_TOKEN']```
-
+* Export to heroku ```atgit```

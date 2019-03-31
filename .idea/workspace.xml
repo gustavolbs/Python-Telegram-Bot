@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,13 +15,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+            <state relative-caret-position="123">
+              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
               <folding>
                 <element signature="e#16#30#0" expanded="true" />
                 <element signature="e#449#663#0" />
                 <element signature="e#1212#1950#0" />
-                <element signature="e#2280#3018#0" />
                 <element signature="e#1992#2931#0" />
                 <element signature="e#2974#4267#0" />
                 <element signature="e#4312#5683#0" />
@@ -177,12 +175,12 @@
       <updated>1553883854375</updated>
       <workItem from="1553913649325" duration="7051000" />
       <workItem from="1553994181027" duration="5192000" />
-      <workItem from="1554052756236" duration="5144000" />
+      <workItem from="1554052756236" duration="5558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17387000" />
+    <option name="totallyTimeSpent" value="17801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1359" y="33" width="1368" height="736" extended-state="6" />
@@ -262,13 +260,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="30" column="75" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
+        <state relative-caret-position="123">
+          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="89" selection-end-column="16" />
           <folding>
             <element signature="e#16#30#0" expanded="true" />
             <element signature="e#449#663#0" />
             <element signature="e#1212#1950#0" />
-            <element signature="e#2280#3018#0" />
             <element signature="e#1992#2931#0" />
             <element signature="e#2974#4267#0" />
             <element signature="e#4312#5683#0" />

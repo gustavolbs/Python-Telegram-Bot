@@ -25,15 +25,15 @@ def help(bot, update):
     bot.send_message(
         chat_id=update.message.chat_id,
         text='Esses são os comandos disponíveis no momento no ListasBot:'
-             '\n\n"/start" para iniciar uma conversa com o Bot'
-             '\n"/help" para listar os comandos'
-             '\n"/listar" para exibir as listas'
-             '\n"/exibirLista NomeDaLista" para exibir uma lista específica'
-             '\n"/criarLista NomeDaLista" para criar novas listas'
-             '\n"/criarEvento NomeDaLista NomeDoEvento" para criar novos eventos'
-             '\n"/deletarEvento NomeDaLista NomeDoEvento" para deletar um evento'
-             '\n"/deletarLista NomeDaLista" para deletar um evento'
-             '\n"/limparLista NomeDaLista" para deletar todos os eventos de uma lista',
+             '\n\n/start para iniciar uma conversa com o Bot'
+             '\n/help para listar os comandos'
+             '\n/listar para exibir as listas'
+             '\n/exibirLista NomeDaLista para exibir uma lista específica'
+             '\n/criarLista NomeDaLista para criar novas listas'
+             '\n/criarEvento NomeDaLista NomeDoEvento para criar novos eventos'
+             '\n/deletarEvento NomeDaLista NomeDoEvento para deletar um evento'
+             '\n/deletarLista NomeDaLista para deletar um evento'
+             '\n/limparLista NomeDaLista para deletar todos os eventos de uma lista',
         parse_mode=ParseMode.MARKDOWN
     )
 
@@ -82,12 +82,11 @@ def exibirlistaunica(bot, update, args):
                     mensagem += "\n   • {}".format(j)
             mensagem += "\n\n"
 
-            if nome_lista != all_lists[i]["nome"] and i == len(all_lists) - 1:
+            if nome_lista != all_lists[i]["nome"] and i == (len(all_lists)- 1):
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
                 )
-                return None
         bot.send_message(
             chat_id=update.message.chat_id,
             text=mensagem,

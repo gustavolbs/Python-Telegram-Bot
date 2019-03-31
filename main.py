@@ -200,5 +200,5 @@ if __name__ == '__main__':
     try:
         main_loop()
     except Exception as e:
-        print e
+        print (e)
         sys.exit(0)

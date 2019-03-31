@@ -75,23 +75,25 @@ def exibirlistaunica(bot, update, args):
         mensagem = ""
         listas = ""
         for i in range(len(all_lists)):
+            listas += "\n" + all_lists[i]["nome"]
             if nome_lista == all_lists[i]["nome"]:
-                listas += "\n" + all_lists[i]["nome"]
                 mensagem += "* {}:*".format(all_lists[i]["nome"])
                 for j in all_lists[i]["itens"]:
                     mensagem += "\n   • {}".format(j)
-            mensagem += "\n\n"
+                mensagem += "\n\n"
+                bot.send_message(
+                    chat_id=update.message.chat_id,
+                    text=mensagem,
+                    parse_mode=ParseMode.MARKDOWN
+                )
+                return
 
             if nome_lista != all_lists[i]["nome"] and i == (len(all_lists)- 1):
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
                 )
-        bot.send_message(
-            chat_id=update.message.chat_id,
-            text=mensagem,
-            parse_mode=ParseMode.MARKDOWN
-        )
+                return
 
 
 def criarlista(bot, update, args):

@@ -25,10 +25,6 @@ def start(bot, update):
     if user_id not in all_user_data:
         all_user_data[user_id] = []
 
-    # Store value
-    user_data = all_user_data[user_id]
-    user_data[key] = value
-
     bot.send_message(chat_id=update.message.chat_id, text='Olá, eu sou o ListasBot!\nVamos começar?\n\nUtilize '
                                                           '"/help" para exibir os comandos disponíveis.')
 

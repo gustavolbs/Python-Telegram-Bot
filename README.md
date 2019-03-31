@@ -8,9 +8,10 @@
 - [x] Create events to lists
 - [x] Delete events from lists
 - [x] Deploy on Heroku
-- [x] Persist lists
 - [x] Delete lists
 - [x] Clear a list
+- [ ] Individual Session
+- [ ] Persist lists
 - [ ] Show lists individually
 - [ ] Notify about day events
 

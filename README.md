@@ -10,9 +10,9 @@
 - [x] Deploy on Heroku
 - [x] Delete lists
 - [x] Clear a list
-- [ ] Individual Session
+- [x] Individual Session
+- [x] Show lists individually
 - [ ] Persist lists
-- [ ] Show lists individually
 - [ ] Notify about day events
 
 ## Steps to code

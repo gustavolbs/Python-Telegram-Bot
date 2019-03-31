@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python-Telegram-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Telegram-Bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,54 +14,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1226200417">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="2546" />
-          <entry key="txt" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="2546" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+            <state relative-caret-position="192">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding>
-                <element signature="e#16#26#0" expanded="true" />
-                <element signature="e#156#632#0" />
-                <element signature="e#660#1090#0" />
-                <element signature="e#697#904#0" />
-                <element signature="e#1503#1588#0" />
-                <marker date="1553892180474" expanded="true" signature="653:1054" ph="..." />
-                <marker date="1553892180474" expanded="true" signature="1083:1106" ph="..." />
-                <marker date="1553892180474" expanded="true" signature="1770:2201" ph="..." />
+                <element signature="e#436#650#0" />
+                <element signature="e#738#1226#0" />
+                <element signature="e#1105#1792#0" />
+                <element signature="e#1137#1382#0" />
+                <element signature="e#1834#2800#0" />
+                <element signature="e#2963#4264#0" />
+                <element signature="e#4353#5646#0" />
+                <element signature="e#2833#2982#0" />
               </folding>
             </state>
           </provider>
@@ -76,9 +48,12 @@
     <findStrings>
       <find>update</find>
       <find>bot</find>
+      <find>unknow</find>
+      <find>user_says</find>
     </findStrings>
     <replaceStrings>
       <replace>updater</replace>
+      <replace>nome_lista</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -91,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="27" />
     <option name="width" value="960" />
@@ -116,7 +91,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,11 +102,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -159,6 +136,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -184,20 +162,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553883854375</updated>
+      <workItem from="1553913649325" duration="7051000" />
+      <workItem from="1553994181027" duration="5192000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12243000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="1359" y="33" width="1368" height="736" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2497332" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13939394" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" weight="0.32900432" />
-      <window_info active="true" anchor="bottom" id="Terminal" sideWeight="0.4994664" visible="true" weight="0.32900432" />
-      <window_info anchor="bottom" id="Event Log" sideWeight="0.50053364" side_tool="true" weight="0.32900432" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900432" />
@@ -205,67 +183,66 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4994664" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053364" side_tool="true" weight="0.32900432" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.32900432" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="SciView" order="4" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/env/bin/futurize">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/bot.py">
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/bot.py" />
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/user.py" />
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/ext/messagehandler.py" />
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/ext/updater.py" />
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/telegram/ext/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43424">
-          <caret line="1627" column="58" selection-start-line="1627" selection-start-column="58" selection-end-line="1627" selection-end-column="58" />
+        <state relative-caret-position="393">
+          <caret line="45" column="43" selection-start-line="45" selection-start-column="43" selection-end-line="45" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/__init__.py">
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/telegram/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="100" column="19" selection-start-line="100" selection-start-column="19" selection-end-line="100" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="166" column="4" selection-start-line="166" selection-start-column="4" selection-end-line="166" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/ext/messagehandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/ext/updater.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="176" column="16" selection-start-line="176" selection-start-column="16" selection-end-line="176" selection-end-column="16" />
+        <state relative-caret-position="342">
+          <caret line="154" column="67" selection-start-line="154" selection-start-column="67" selection-end-line="154" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
+        <state relative-caret-position="192">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding>
-            <element signature="e#16#26#0" expanded="true" />
-            <element signature="e#156#632#0" />
-            <element signature="e#660#1090#0" />
-            <element signature="e#697#904#0" />
-            <element signature="e#1503#1588#0" />
-            <marker date="1553892180474" expanded="true" signature="653:1054" ph="..." />
-            <marker date="1553892180474" expanded="true" signature="1083:1106" ph="..." />
-            <marker date="1553892180474" expanded="true" signature="1770:2201" ph="..." />
+            <element signature="e#436#650#0" />
+            <element signature="e#738#1226#0" />
+            <element signature="e#1105#1792#0" />
+            <element signature="e#1137#1382#0" />
+            <element signature="e#1834#2800#0" />
+            <element signature="e#2963#4264#0" />
+            <element signature="e#4353#5646#0" />
+            <element signature="e#2833#2982#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/telegram/ext/filters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3288">
+          <caret line="139" column="6" selection-start-line="139" selection-start-column="6" selection-end-line="139" selection-end-column="6" />
         </state>
       </provider>
     </entry>

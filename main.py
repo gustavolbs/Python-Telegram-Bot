@@ -8,7 +8,7 @@ all_lists = []
 
 # check for new messages --> polling
 # token = os.environ['BOT_API_TOKEN']
-token = ''
+token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.

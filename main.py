@@ -1,7 +1,6 @@
 # coding: utf-8
 import sys, os
 from telegram import ParseMode
-from uuid import uuid4
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # All lists

@@ -9,8 +9,8 @@
 - [x] Delete events from lists
 - [x] Deploy on Heroku
 - [x] Persist lists
-- [ ] Delete lists
-- [ ] Clear a list
+- [x] Delete lists
+- [x] Clear a list
 - [ ] Show lists individually
 - [ ] Notify about day events
 

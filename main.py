@@ -29,7 +29,8 @@ def help(bot, update):
              '\n"/help" para listar os comandos'
              '\n"/listar" para exibir as listas'
              '\n"/criarLista NomeDaLista" para criar novas listas'
-             '\n"/criarEvento NomeDaLista NomeDoEvento" para criar novos eventos',
+             '\n"/criarEvento NomeDaLista NomeDoEvento" para criar novos eventos'
+             '\n"/deletarEvento NomeDaLista NomeDoEvento" para deletar um evento',
         parse_mode=ParseMode.MARKDOWN
     )
 

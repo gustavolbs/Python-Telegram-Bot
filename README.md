@@ -7,8 +7,10 @@
 - [x] Help command
 - [x] Create events to lists
 - [x] Delete events from lists
+- [x] Deploy on Heroku
+- [ ] Delete lists
+- [ ] Clear a list
 - [ ] Show lists individually
-- [ ] Deploy on Heroku
 - [ ] Notify about day events
 - [ ] Persist lists
 

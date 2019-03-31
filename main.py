@@ -1,10 +1,12 @@
 # coding: utf-8
 import sys, os
 from telegram import ParseMode
+from uuid import uuid4
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # All lists
-all_lists = []
+all_user_data = dict()
+all_user_data[user_id] = []
 
 # check for new messages --> polling
 # token = os.environ['BOT_API_TOKEN']
@@ -17,6 +19,16 @@ dispatcher = updater.dispatcher
 
 # define a command callback function
 def start(bot, update):
+    user_id = update.message.from_user.id
+
+    # Create user dict if it doesn't exist
+    if user_id not in all_user_data:
+        all_user_data[user_id] = []
+
+    # Store value
+    user_data = all_user_data[user_id]
+    user_data[key] = value
+
     bot.send_message(chat_id=update.message.chat_id, text='Olá, eu sou o ListasBot!\nVamos começar?\n\nUtilize '
                                                           '"/help" para exibir os comandos disponíveis.')
 
@@ -39,7 +51,9 @@ def help(bot, update):
 
 
 def listar(bot, update):
-    if len(all_lists) == 0:
+    user_id = update.message.from_user.id
+
+    if len(all_user_data[user_id]) == 0:
         bot.send_message(
             chat_id=update.message.chat_id,
             text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criarLista" passando um nome para criar uma nova lista.\nExemplo: "/criarLista A Fazeres"',
@@ -48,9 +62,9 @@ def listar(bot, update):
 
     else:
         mensagem = ""
-        for i in range(len(all_lists)):
-            mensagem += "* {}:*".format(all_lists[i]["nome"])
-            for j in all_lists[i]["itens"]:
+        for i in range(len(all_user_data[user_id])):
+            mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
+            for j in all_user_data[user_id][i]["itens"]:
                 mensagem += "\n   • {}".format(j)
             mensagem += "\n\n"
 
@@ -62,9 +76,10 @@ def listar(bot, update):
 
 
 def exibirlistaunica(bot, update, args):
+    user_id = update.message.from_user.id
     nome_lista = ' '.join(args).strip()
 
-    if len(all_lists) == 0:
+    if len(all_user_data[user_id]) == 0:
         bot.send_message(
             chat_id=update.message.chat_id,
             text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criarLista" passando um nome para criar uma nova lista.\nExemplo: "/criarLista A Fazeres"',
@@ -74,11 +89,11 @@ def exibirlistaunica(bot, update, args):
     else:
         mensagem = ""
         listas = ""
-        for i in range(len(all_lists)):
-            listas += "\n" + all_lists[i]["nome"]
-            if nome_lista == all_lists[i]["nome"]:
-                mensagem += "* {}:*".format(all_lists[i]["nome"])
-                for j in all_lists[i]["itens"]:
+        for i in range(len(all_user_data[user_id])):
+            listas += "\n" + all_user_data[user_id][i]["nome"]
+            if nome_lista == all_user_data[user_id][i]["nome"]:
+                mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
+                for j in all_user_data[user_id][i]["itens"]:
                     mensagem += "\n   • {}".format(j)
                 mensagem += "\n\n"
                 bot.send_message(
@@ -88,7 +103,7 @@ def exibirlistaunica(bot, update, args):
                 )
                 return
 
-            if nome_lista != all_lists[i]["nome"] and i == (len(all_lists)- 1):
+            if nome_lista != all_user_data[user_id][i]["nome"] and i == (len(all_user_data[user_id])- 1):
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
@@ -97,11 +112,12 @@ def exibirlistaunica(bot, update, args):
 
 
 def criarlista(bot, update, args):
+    user_id = update.message.from_user.id
     nome_lista = ' '.join(args).strip()
 
     if nome_lista != "":
-        for i in range(len(all_lists)):
-            if nome_lista in all_lists[i]["nome"]:
+        for i in range(len(all_user_data[user_id])):
+            if nome_lista in all_user_data[user_id][i]["nome"]:
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Uma lista com esse nome já foi criada.\nTente novamente utilizando outro nome.'
@@ -115,12 +131,11 @@ def criarlista(bot, update, args):
             "nome": nome_lista,
             "itens": []
         }
-        all_lists.append(lista)
+        all_user_data[user_id].append(lista)
         bot.send_message(
             chat_id=update.message.chat_id,
             text="Lista criada com sucesso!"
         )
-
 
     else:
         bot.send_message(
@@ -130,17 +145,18 @@ def criarlista(bot, update, args):
 
 
 def criarevento(bot, update, args):
+    user_id = update.message.from_user.id
     param = ' '.join(args).strip()
     nome_lista = param.split(' ', 1)[0]
     nome_evento = param.split(' ', 1)[1]
 
     if nome_lista != "" and nome_evento != "":
         listas = ""
-        for i in range(len(all_lists)):
-            listas += "\n" + all_lists[i]["nome"]
-            if nome_lista == all_lists[i]["nome"]:
-                if nome_evento not in all_lists[i]["itens"]:
-                    all_lists[i]["itens"].append(nome_evento)
+        for i in range(len(all_user_data[user_id])):
+            listas += "\n" + all_user_data[user_id][i]["nome"]
+            if nome_lista == all_user_data[user_id][i]["nome"]:
+                if nome_evento not in all_user_data[user_id][i]["itens"]:
+                    all_user_data[user_id][i]["itens"].append(nome_evento)
                     bot.send_message(
                         chat_id=update.message.chat_id,
                         text='Evento foi criado com sucesso.'
@@ -152,7 +168,7 @@ def criarevento(bot, update, args):
                         text='Evento já existe.'
                     )
 
-            if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+            if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
@@ -167,18 +183,19 @@ def criarevento(bot, update, args):
 
 
 def deletarevento(bot, update, args):
+    user_id = update.message.from_user.id
     param = ' '.join(args).strip()
     nome_lista = param.split(' ', 1)[0]
     nome_evento = param.split(' ', 1)[1]
 
     if nome_lista != "" and nome_evento != "":
         listas = ""
-        for i in range(len(all_lists)):
-            listas += "\n" + all_lists[i]["nome"]
-            if nome_lista == all_lists[i]["nome"]:
-                if nome_evento in all_lists[i]["itens"]:
-                    index = all_lists[i]["itens"].index(nome_evento)
-                    all_lists[i]["itens"].pop(index)
+        for i in range(len(all_user_data[user_id])):
+            listas += "\n" + all_user_data[user_id][i]["nome"]
+            if nome_lista == all_user_data[user_id][i]["nome"]:
+                if nome_evento in all_user_data[user_id][i]["itens"]:
+                    index = all_user_data[user_id][i]["itens"].index(nome_evento)
+                    all_user_data[user_id][i]["itens"].pop(index)
                     bot.send_message(
                         chat_id=update.message.chat_id,
                         text='Evento foi deletado com sucesso.'
@@ -190,7 +207,7 @@ def deletarevento(bot, update, args):
                         text='Evento não existe ou já foi deletado.'
                     )
 
-            if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+            if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
@@ -205,19 +222,20 @@ def deletarevento(bot, update, args):
 
 
 def deletarlista(bot, update, args):
+    user_id = update.message.from_user.id
     nome_lista = ' '.join(args).strip()
 
     listas = ""
-    for i in range(len(all_lists)):
-        listas += "\n" + all_lists[i]["nome"]
-        if nome_lista == all_lists[i]["nome"]:
-            all_lists.pop(i)
+    for i in range(len(all_user_data[user_id])):
+        listas += "\n" + all_user_data[user_id][i]["nome"]
+        if nome_lista == all_user_data[user_id][i]["nome"]:
+            all_user_data[user_id].pop(i)
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text='A lista foi deletada com sucesso.'
             )
             break
-        if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+        if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text='Lista não existe ou já foi deletada. Essas são as listas disponíveis:\n{}'.format(listas)
@@ -226,21 +244,22 @@ def deletarlista(bot, update, args):
 
 
 def limparlista(bot, update, args):
+    user_id = update.message.from_user.id
     nome_lista = ' '.join(args).strip()
 
     listas = ""
-    for i in range(len(all_lists)):
-        listas += "\n" + all_lists[i]["nome"]
-        if nome_lista == all_lists[i]["nome"]:
-            while len(all_lists[i]["itens"]) != 0:
-                all_lists[i]["itens"].pop()
+    for i in range(len(all_user_data[user_id])):
+        listas += "\n" + all_user_data[user_id][i]["nome"]
+        if nome_lista == all_user_data[user_id][i]["nome"]:
+            while len(all_user_data[user_id][i]["itens"]) != 0:
+                all_user_data[user_id][i]["itens"].pop()
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text='Todos os eventos da lista foram deletados.'
             )
             break
 
-        if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+        if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
             bot.send_message(
                 chat_id=update.message.chat_id,
                 text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)

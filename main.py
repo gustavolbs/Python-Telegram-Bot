@@ -6,7 +6,6 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # All lists
 all_user_data = dict()
-all_user_data[user_id] = []
 
 # check for new messages --> polling
 # token = os.environ['BOT_API_TOKEN']

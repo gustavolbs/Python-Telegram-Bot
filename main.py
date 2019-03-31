@@ -30,7 +30,9 @@ def help(bot, update):
              '\n"/listar" para exibir as listas'
              '\n"/criarLista NomeDaLista" para criar novas listas'
              '\n"/criarEvento NomeDaLista NomeDoEvento" para criar novos eventos'
-             '\n"/deletarEvento NomeDaLista NomeDoEvento" para deletar um evento',
+             '\n"/deletarEvento NomeDaLista NomeDoEvento" para deletar um evento'
+             '\n"/deletarLista NomeDaLista" para deletar um evento'
+             '\n"/limparLista NomeDaLista" para deletar todos os eventos de uma lista',
         parse_mode=ParseMode.MARKDOWN
     )
 
@@ -166,6 +168,50 @@ def deletarevento(bot, update, args):
         )
 
 
+def deletarlista(bot, update, args):
+    nome_lista = ' '.join(args).strip()
+
+    listas = ""
+    for i in range(len(all_lists)):
+        listas += "\n" + all_lists[i]["nome"]
+        if nome_lista == all_lists[i]["nome"]:
+            all_lists.pop(i)
+            bot.send_message(
+                chat_id=update.message.chat_id,
+                text='A lista foi deletada com sucesso.'
+            )
+            break
+        if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+            bot.send_message(
+                chat_id=update.message.chat_id,
+                text='Lista não existe ou já foi deletada. Essas são as listas disponíveis:\n\n{}'.format(listas)
+            )
+            return None
+
+
+def limparlista(bot, update, args):
+    nome_lista = ' '.join(args).strip()
+
+    listas = ""
+    for i in range(len(all_lists)):
+        listas += "\n" + all_lists[i]["nome"]
+        if nome_lista == all_lists[i]["nome"]:
+            while len(all_lists[i]["itens"]) != 0:
+                all_lists[i]["itens"].pop()
+                bot.send_message(
+                    chat_id=update.message.chat_id,
+                    text='Todos os eventos da lista foram deletados.'
+                )
+            break
+
+        if nome_lista != all_lists[i]["nome"] and i == len(all_lists)-1:
+            bot.send_message(
+                chat_id=update.message.chat_id,
+                text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
+            )
+            return None
+
+
 def unknown(bot, update):
     bot.send_message(
         chat_id=update.message.chat_id,
@@ -184,8 +230,10 @@ criarLista_handler = CommandHandler("criarLista", criarlista, pass_args=True)
 criarEvento_handler = CommandHandler("criarEvento", criarevento, pass_args=True)
 
 deletarevento_handler = CommandHandler("deletarEvento", deletarevento, pass_args=True)
+deletarlista_handler = CommandHandler("deletarLista", deletarlista, pass_args=True)
+limparlista_handler = CommandHandler("limparLista", limparlista, pass_args=True)
 
-handlers = [start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
+handlers = [deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
 
 # add command handler to dispatcher
 for i in handlers:

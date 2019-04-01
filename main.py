@@ -318,7 +318,7 @@ deletarevento_handler = CommandHandler("deletarEvento", deletarevento, pass_args
 deletarlista_handler = CommandHandler("deletarLista", deletarlista, pass_args=True)
 limparlista_handler = CommandHandler("limparLista", limparlista, pass_args=True)
 
-mostrarbotoes_handler = CommandHandler("botoes", mostrarbotoes, pass_args=True)
+mostrarbotoes_handler = CommandHandler("botoes", mostrarbotoes)
 
 handlers = [mostrarbotoes_handler, exibirlistaunica_handler, deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
 

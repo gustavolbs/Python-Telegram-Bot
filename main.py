@@ -299,6 +299,7 @@ def mostrarbotoes(bot, update):
         reply_markup=reply_markup,
     )
 
+
 def button(bot, update):
 
     query = update.callback_query
@@ -312,7 +313,7 @@ def button(bot, update):
         message_id=query.message.message_id,
         reply_markup=[]
     )
-
+    return query.data
 
 
 def unknown(bot, update):

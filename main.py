@@ -304,8 +304,9 @@ def button(bot, update):
         chat_id=query.message.chat_id,
         text='{}'.format(query.data),
     )
-    bot.editMessage(
+    bot.edit_message_reply_markup(
         chat_id=query.message.chat_id,
+        message_id=query.message.message_id,
         reply_markup=[]
     )
 

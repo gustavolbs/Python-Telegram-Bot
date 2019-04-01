@@ -284,8 +284,8 @@ def limparlista(bot, update, args):
 
 def mostrarbotoes(bot, update):
     button = [
-        [InlineKeyboardButton("Lista 1", callback_data=1)]
-        [InlineKeyboardButton("Lista 2", callback_data=2)]
+        [InlineKeyboardButton("Lista 1", callback_data=1)],
+        [InlineKeyboardButton("Lista 2", callback_data=2)],
         [InlineKeyboardButton("Lista 3", callback_data=3)]
     ]
 

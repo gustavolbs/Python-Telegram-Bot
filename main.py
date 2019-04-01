@@ -300,15 +300,15 @@ def button(bot, update):
 
     query = update.callback_query
 
-    bot.editMessageText(
-        chat_id=query.message.chat_id,
-        reply_markup=[]
-    )
     bot.send_message(
         chat_id=query.message.chat_id,
         text='{}'.format(query.data),
-        reply_markup=ReplyKeyboardRemove()
     )
+    bot.editMessage(
+        chat_id=query.message.chat_id,
+        reply_markup=[]
+    )
+
 
 
 def unknown(bot, update):

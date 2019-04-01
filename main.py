@@ -283,16 +283,19 @@ def limparlista(bot, update, args):
 
 
 def mostrarbotoes(bot, update):
-    button = [
-        [InlineKeyboardButton("Lista 1", callback_data=1)],
-        [InlineKeyboardButton("Lista 2", callback_data=2)],
-        [InlineKeyboardButton("Lista 3", callback_data=3)]
-    ]
+    user_id = update.message.from_user.id
+
+    button = []
+
+    for i in range(len(all_user_data[user_id])):
+        lista = "{}".format(all_user_data[user_id][i]["nome"])
+        l = [InlineKeyboardButton("{}".format(lista), callback_data=lista)]
+        button.append(l)
 
     reply_markup = InlineKeyboardMarkup(button)
     bot.send_message(
         chat_id=update.message.chat_id,
-        text='Escolher uma lista',
+        text='Escolha uma lista',
         reply_markup=reply_markup,
     )
 

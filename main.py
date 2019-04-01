@@ -1,10 +1,27 @@
 # coding: utf-8
-import sys, os
+import sys, pickle
 from telegram import ParseMode
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
+
+def save():
+    afile = open(r'all_user_data.pkl', 'wb')
+    pickle.dump(all_user_data, afile)
+    afile.close()
+
 # All lists
-all_user_data = dict()
+try:
+    # reload object from file
+    file2 = open(r'all_user_data.pkl', 'rb')
+    all_user_data = pickle.load(file2)
+    file2.close()
+    print("ABRIR O DADO")
+
+except:
+    all_user_data = dict()
+    save()
+    print("CRIOU E SALVOU O ARQUIVO QUE É UMA BELEZA")
+
 
 # check for new messages --> polling
 # token = os.environ['BOT_API_TOKEN']
@@ -23,8 +40,10 @@ def start(bot, update):
     if user_id not in all_user_data:
         all_user_data[user_id] = []
 
-    bot.send_message(chat_id=update.message.chat_id, text='Olá, eu sou o ListasBot!\nVamos começar?\n\nUtilize '
-                                                          '"/help" para exibir os comandos disponíveis.')
+    bot.send_message(chat_id=update.message.chat_id,
+                     text='Olá, eu sou o ListasBot!\nVamos começar?\n\nUtilize "/help" para exibir os comandos disponíveis.'
+                     )
+    save()
 
 
 def help(bot, update):
@@ -136,6 +155,7 @@ def criarlista(bot, update, args):
             chat_id=update.message.chat_id,
             text='Nome Inválido.\nTente novamente utilizando outro nome.'
         )
+    save()
 
 
 def criarevento(bot, update, args):
@@ -174,6 +194,7 @@ def criarevento(bot, update, args):
             chat_id=update.message.chat_id,
             text='Nome da lista ou nome do evento inválido.'
         )
+    save()
 
 
 def deletarevento(bot, update, args):
@@ -213,6 +234,7 @@ def deletarevento(bot, update, args):
             chat_id=update.message.chat_id,
             text='Nome da lista ou nome do evento inválido.'
         )
+    save()
 
 
 def deletarlista(bot, update, args):
@@ -235,6 +257,7 @@ def deletarlista(bot, update, args):
                 text='Lista não existe ou já foi deletada. Essas são as listas disponíveis:\n{}'.format(listas)
             )
             return None
+    save()
 
 
 def limparlista(bot, update, args):
@@ -259,6 +282,7 @@ def limparlista(bot, update, args):
                 text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
             )
             return None
+    save()
 
 
 def unknown(bot, update):

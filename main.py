@@ -313,7 +313,9 @@ def button(bot, update):
         message_id=query.message.message_id,
         reply_markup=[]
     )
-    return query.data
+    global selected
+    selected = query.data
+    return selected
 
 
 def unknown(bot, update):

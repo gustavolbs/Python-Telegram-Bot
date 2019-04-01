@@ -283,6 +283,7 @@ def limparlista(bot, update, args):
 
 
 def mostrarbotoes(bot, update):
+    global button
     button = [
         [InlineKeyboardButton("Lista 1", callback_data=1)],
         [InlineKeyboardButton("Lista 2", callback_data=2)],
@@ -297,7 +298,9 @@ def mostrarbotoes(bot, update):
     )
 
 def button(bot, update):
+
     query = update.callback_query
+    button = []
 
     bot.send_message(
         chat_id=query.message.chat_id,

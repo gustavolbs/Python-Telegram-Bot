@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, pickle
-from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 
 
@@ -288,23 +288,22 @@ def mostrarbotoes(bot, update):
         [InlineKeyboardButton("Lista 2", callback_data=2)],
         [InlineKeyboardButton("Lista 3", callback_data=3)]
     ]
-    global reply_markup
+
     reply_markup = InlineKeyboardMarkup(button)
     bot.send_message(
         chat_id=update.message.chat_id,
         text='Escolher uma lista',
         reply_markup=reply_markup,
-        remove_keyboard=True
     )
 
 def button(bot, update):
 
     query = update.callback_query
-    reply_markup = []
 
     bot.send_message(
         chat_id=query.message.chat_id,
-        text='{}'.format(query.data)
+        text='{}'.format(query.data),
+        reply_markup=ReplyKeyboardRemove()
     )
 
 

@@ -1,7 +1,7 @@
 # coding: utf-8
 import sys, pickle
 from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
 
 
 def save():
@@ -296,6 +296,15 @@ def mostrarbotoes(bot, update):
         reply_markup=reply_markup
     )
 
+def button(bot, update):
+    query = update.callback_query
+
+    bot.send_message(
+        chat_id=query.message.chat_id,
+        text='{}'.format(query.data)
+    )
+
+
 def unknown(bot, update):
     bot.send_message(
         chat_id=update.message.chat_id,
@@ -319,8 +328,9 @@ deletarlista_handler = CommandHandler("deletarLista", deletarlista, pass_args=Tr
 limparlista_handler = CommandHandler("limparLista", limparlista, pass_args=True)
 
 mostrarbotoes_handler = CommandHandler("botoes", mostrarbotoes)
+botoes_handler = CallbackQueryHandler(button)
 
-handlers = [mostrarbotoes_handler, exibirlistaunica_handler, deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
+handlers = [botoes_handler, mostrarbotoes_handler, exibirlistaunica_handler, deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
 
 # add command handler to dispatcher
 for i in handlers:

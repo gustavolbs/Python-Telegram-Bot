@@ -294,7 +294,8 @@ def mostrarbotoes(bot, update):
     bot.send_message(
         chat_id=update.message.chat_id,
         text='Escolher uma lista',
-        reply_markup=reply_markup
+        reply_markup=reply_markup,
+        remove_keyboard=True
     )
 
 def button(bot, update):

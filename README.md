@@ -12,7 +12,8 @@
 - [x] Clear a list
 - [x] Individual Session
 - [x] Show lists individually
-- [ ] Persist lists
+- [x] Persist lists
+- [ ] Botões para listas
 - [ ] Notify about day events
 
 ## Steps to code

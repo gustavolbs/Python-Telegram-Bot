@@ -1,6 +1,6 @@
 # coding: utf-8
 import sys, pickle
-from telegram import ParseMode
+from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 
@@ -15,16 +15,13 @@ try:
     file2 = open(r'all_user_data.pkl', 'rb')
     all_user_data = pickle.load(file2)
     file2.close()
-    print("ABRIR O DADO")
 
 except:
     all_user_data = dict()
     save()
-    print("CRIOU E SALVOU O ARQUIVO QUE É UMA BELEZA")
 
 
 # check for new messages --> polling
-# token = os.environ['BOT_API_TOKEN']
 token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
@@ -285,6 +282,20 @@ def limparlista(bot, update, args):
     save()
 
 
+def mostrarbotoes(bot, update):
+    button = [
+        [InlineKeyboardButton("Lista 1", callback_data=1)]
+        [InlineKeyboardButton("Lista 2", callback_data=2)]
+        [InlineKeyboardButton("Lista 3", callback_data=3)]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(button)
+    bot.send_message(
+        chat_id=update.message.chat_id,
+        text='Escolher uma lista',
+        reply_markup=reply_markup
+    )
+
 def unknown(bot, update):
     bot.send_message(
         chat_id=update.message.chat_id,
@@ -307,7 +318,9 @@ deletarevento_handler = CommandHandler("deletarEvento", deletarevento, pass_args
 deletarlista_handler = CommandHandler("deletarLista", deletarlista, pass_args=True)
 limparlista_handler = CommandHandler("limparLista", limparlista, pass_args=True)
 
-handlers = [exibirlistaunica_handler, deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
+mostrarbotoes_handler = CommandHandler("botoes", mostrarbotoes, pass_args=True)
+
+handlers = [mostrarbotoes_handler, exibirlistaunica_handler, deletarlista_handler, limparlista_handler, start_handler, listar_handler, deletarevento_handler, criarLista_handler, criarEvento_handler, help_handler, unknown_handler]
 
 # add command handler to dispatcher
 for i in handlers:

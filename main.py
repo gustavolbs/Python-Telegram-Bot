@@ -22,7 +22,7 @@ except:
 
 
 # check for new messages --> polling
-token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
+token = '#818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.
@@ -100,6 +100,7 @@ def exibirlistaunica(bot, update):
         mensagem = ""
         mostrarbotoes(bot, update)
         nome_lista = "{}".format(selected)
+        print(nome_lista, selected)
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 mensagem += "* {}:*".format(nome_lista)
@@ -167,11 +168,11 @@ def criarevento(bot, update, args):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 if nome_evento not in all_user_data[user_id][i]["itens"]:
                     all_user_data[user_id][i]["itens"].append(nome_evento)
+                    save()
                     bot.send_message(
                         chat_id=update.message.chat_id,
                         text='Evento foi criado com sucesso.'
                     )
-                    save()
                     break
                 else:
                     bot.send_message(
@@ -314,7 +315,6 @@ def button(bot, update):
     )
     global selected
     selected = query.data
-    return selected
 
 
 def unknown(bot, update):

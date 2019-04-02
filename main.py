@@ -22,7 +22,7 @@ except:
 
 
 # check for new messages --> polling
-token = '#818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
+token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.
@@ -50,7 +50,7 @@ def help(bot, update):
              '\n\n/start para iniciar uma conversa com o Bot'
              '\n/help para listar os comandos'
              '\n/listar para exibir as listas'
-             '\n/exibirLista NomeDaLista para exibir uma lista específica'
+             '\n/exibir_lista NomeDaLista para exibir uma lista específica'
              '\n/criar_lista NomeDaLista para criar novas listas'
              '\n/criar_evento NomeDaLista NomeDoEvento para criar novos eventos'
              '\n/deletar_evento NomeDaLista NomeDoEvento para deletar um evento'
@@ -66,7 +66,7 @@ def listar(bot, update):
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
             chat_id=update.message.chat_id,
-            text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criarLista" passando um nome para criar uma nova lista.\nExemplo: "/criarLista A Fazeres"',
+            text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criar_lista" passando um nome para criar uma nova lista.\nExemplo: "/criar_lista A Fazeres"',
             parse_mode=ParseMode.MARKDOWN
         )
 
@@ -85,31 +85,25 @@ def listar(bot, update):
         )
 
 
-def exibirlistaunica(bot, update):
+def exibirlistaunica(bot, update, args):
     user_id = update.message.from_user.id
-    selected = ""
+    nome_lista = ' '.join(args).strip()
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
             chat_id=update.message.chat_id,
-            text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criarLista" passando um nome para criar uma nova lista.\nExemplo: "/criarLista A Fazeres"',
+            text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criar_lista" passando um nome para criar uma nova lista.\nExemplo: "/criar_lista A Fazeres"',
             parse_mode=ParseMode.MARKDOWN
         )
 
     else:
         mensagem = ""
-        mostrarbotoes(bot, update)
-        nome_lista = "{}".format(selected)
-        print(nome_lista, selected)
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 mensagem += "* {}:*".format(nome_lista)
-                print (nome_lista, all_user_data[user_id][i]["nome"])
-                print (mensagem)
-                if (len(all_user_data[user_id][i]["itens"]) > 0):
+                if len(all_user_data[user_id][i]["itens"]) > 0:
                     for j in all_user_data[user_id][i]["itens"]:
                         mensagem += "\n   • {}".format(j)
-                        print (mensagem)
                     mensagem += "\n\n"
                 else:
                     mensagem = "Você não possui itens na lista."
@@ -118,7 +112,7 @@ def exibirlistaunica(bot, update):
                     text=mensagem,
                     parse_mode=ParseMode.MARKDOWN
                 )
-                return
+                break
 
 
 def criarlista(bot, update, args):
@@ -168,7 +162,6 @@ def criarevento(bot, update, args):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 if nome_evento not in all_user_data[user_id][i]["itens"]:
                     all_user_data[user_id][i]["itens"].append(nome_evento)
-                    save()
                     bot.send_message(
                         chat_id=update.message.chat_id,
                         text='Evento foi criado com sucesso.'
@@ -186,6 +179,7 @@ def criarevento(bot, update, args):
                     text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
                 )
                 return None
+        save()
 
     else:
         bot.send_message(
@@ -301,13 +295,12 @@ def mostrarbotoes(bot, update):
 
 
 def button(bot, update):
-
     query = update.callback_query
 
-    # bot.send_message(
-    #     chat_id=query.message.chat_id,
-    #     text='{}'.format(query.data),
-    # )
+    bot.send_message(
+        chat_id=query.message.chat_id,
+        text='{}'.format(query.data),
+    )
     bot.edit_message_reply_markup(
         chat_id=query.message.chat_id,
         message_id=query.message.message_id,
@@ -330,7 +323,7 @@ help_handler = CommandHandler("help", help)
 unknown_handler = MessageHandler([Filters.command], unknown)
 
 listar_handler = CommandHandler("listar", listar)
-exibirlistaunica_handler = CommandHandler("exibir_lista", exibirlistaunica)
+exibirlistaunica_handler = CommandHandler("exibir_lista", exibirlistaunica, pass_args=True)
 
 criarLista_handler = CommandHandler("criar_lista", criarlista, pass_args=True)
 criarEvento_handler = CommandHandler("criar_evento", criarevento, pass_args=True)

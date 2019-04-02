@@ -88,9 +88,6 @@ def listar(bot, update):
 def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
     selected = ""
-    mostrarbotoes(bot, update)
-    nome_lista = "{}".format(selected)
-    print (nome_lista)
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
@@ -101,9 +98,12 @@ def exibirlistaunica(bot, update):
 
     else:
         mensagem = ""
+        mostrarbotoes(bot, update)
+        nome_lista = "{}".format(selected)
+        print (nome_lista)
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
-                mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
+                mensagem += "* {}:*".format(nome_lista)
                 for j in all_user_data[user_id][i]["itens"]:
                     mensagem += "\n   • {}".format(j)
                 mensagem += "\n\n"
@@ -166,6 +166,7 @@ def criarevento(bot, update, args):
                         chat_id=update.message.chat_id,
                         text='Evento foi criado com sucesso.'
                     )
+                    save()
                     break
                 else:
                     bot.send_message(
@@ -185,7 +186,6 @@ def criarevento(bot, update, args):
             chat_id=update.message.chat_id,
             text='Nome da lista ou nome do evento inválido.'
         )
-    save()
 
 
 def deletarevento(bot, update, args):

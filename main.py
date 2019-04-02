@@ -87,7 +87,8 @@ def listar(bot, update):
 
 def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
-    nome_lista = mostrarbotoes(bot, update)
+    mostrarbotoes(bot, update)
+    nome_lista = "" + selected
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
@@ -98,9 +99,7 @@ def exibirlistaunica(bot, update):
 
     else:
         mensagem = ""
-        listas = ""
         for i in range(len(all_user_data[user_id])):
-            listas += "\n" + all_user_data[user_id][i]["nome"]
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
                 for j in all_user_data[user_id][i]["itens"]:

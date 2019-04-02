@@ -103,11 +103,15 @@ def exibirlistaunica(bot, update):
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 mensagem += "* {}:*".format(nome_lista)
+                print (nome_lista, all_user_data[user_id][i]["nome"])
                 print (mensagem)
-                for j in all_user_data[user_id][i]["itens"]:
-                    mensagem += "\n   • {}".format(j)
-                    print (mensagem)
-                mensagem += "\n\n"
+                if (len(all_user_data[user_id][i]["itens"]) > 0):
+                    for j in all_user_data[user_id][i]["itens"]:
+                        mensagem += "\n   • {}".format(j)
+                        print (mensagem)
+                    mensagem += "\n\n"
+                else:
+                    mensagem = "Você não possui itens na lista."
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text=mensagem,

@@ -324,7 +324,7 @@ help_handler = CommandHandler("help", help)
 unknown_handler = MessageHandler([Filters.command], unknown)
 
 listar_handler = CommandHandler("listar", listar)
-exibirlistaunica_handler = CommandHandler("exibir_lista", exibirlistaunica, pass_args=True)
+exibirlistaunica_handler = CommandHandler("exibir_lista", exibirlistaunica)
 
 criarLista_handler = CommandHandler("criar_lista", criarlista, pass_args=True)
 criarEvento_handler = CommandHandler("criar_evento", criarevento, pass_args=True)

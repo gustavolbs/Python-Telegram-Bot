@@ -85,9 +85,9 @@ def listar(bot, update):
         )
 
 
-def exibirlistaunica(bot, update, args):
+def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
-    nome_lista = ' '.join(args).strip()
+    nome_lista = mostrarbotoes(bot, update)
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
@@ -110,13 +110,6 @@ def exibirlistaunica(bot, update, args):
                     chat_id=update.message.chat_id,
                     text=mensagem,
                     parse_mode=ParseMode.MARKDOWN
-                )
-                return
-
-            if nome_lista != all_user_data[user_id][i]["nome"] and i == (len(all_user_data[user_id])- 1):
-                bot.send_message(
-                    chat_id=update.message.chat_id,
-                    text='Lista não existe. Essas são as listas disponíveis:\n{}'.format(listas)
                 )
                 return
 
@@ -304,10 +297,10 @@ def button(bot, update):
 
     query = update.callback_query
 
-    bot.send_message(
-        chat_id=query.message.chat_id,
-        text='{}'.format(query.data),
-    )
+    # bot.send_message(
+    #     chat_id=query.message.chat_id,
+    #     text='{}'.format(query.data),
+    # )
     bot.edit_message_reply_markup(
         chat_id=query.message.chat_id,
         message_id=query.message.message_id,

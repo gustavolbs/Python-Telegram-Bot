@@ -100,12 +100,13 @@ def exibirlistaunica(bot, update):
         mensagem = ""
         mostrarbotoes(bot, update)
         nome_lista = "{}".format(selected)
-        print (nome_lista)
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
                 mensagem += "* {}:*".format(nome_lista)
+                print (mensagem)
                 for j in all_user_data[user_id][i]["itens"]:
                     mensagem += "\n   • {}".format(j)
+                    print (mensagem)
                 mensagem += "\n\n"
                 bot.send_message(
                     chat_id=update.message.chat_id,

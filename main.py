@@ -87,6 +87,7 @@ def listar(bot, update):
 
 def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
+    selected = ""
     mostrarbotoes(bot, update)
     nome_lista = "{}".format(selected)
     print (nome_lista)

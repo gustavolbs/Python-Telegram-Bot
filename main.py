@@ -22,7 +22,7 @@ except:
 
 
 # check for new messages --> polling
-token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
+token = ''
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.

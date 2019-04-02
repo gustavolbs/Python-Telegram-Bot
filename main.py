@@ -89,7 +89,7 @@ def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
     mostrarbotoes(bot, update)
     nome_lista = "{}".format(selected)
-    print nome_lista
+    print (nome_lista)
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(

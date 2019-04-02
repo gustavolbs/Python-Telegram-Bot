@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Python-Telegram-Bot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python-Telegram-Bot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,30 +49,46 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1614194553">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="29" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="29" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+            <state relative-caret-position="343">
+              <caret line="342" selection-start-line="342" selection-end-line="342" />
               <folding>
                 <element signature="e#16#34#0" expanded="true" />
-                <element signature="e#156#252#0" />
-                <element signature="e#864#1232#0" />
-                <element signature="e#1262#2045#0" />
-                <element signature="e#2077#2910#0" />
-                <element signature="e#4451#5481#0" />
-                <element signature="e#5513#6950#0" />
-                <element signature="e#6984#8512#0" />
-                <element signature="e#8545#9354#0" />
-                <element signature="e#9386#10265#0" />
-                <element signature="e#10293#10855#0" />
-                <element signature="e#10789#11139#0" />
-                <element signature="e#9909#10058#0" />
-                <marker date="1554146376696" expanded="true" signature="540:541" ph="..." />
-                <marker date="1554146376696" expanded="true" signature="10774:11133" ph="..." />
+                <element signature="e#832#1199#0" />
+                <element signature="e#1229#2012#0" />
+                <element signature="e#2044#2877#0" />
+                <element signature="e#2925#4354#0" />
+                <element signature="e#4396#5426#0" />
+                <element signature="e#5469#6906#0" />
+                <element signature="e#6951#8479#0" />
+                <element signature="e#8523#9332#0" />
+                <element signature="e#9375#10254#0" />
+                <element signature="e#10293#10747#0" />
+                <element signature="e#10780#11130#0" />
+                <element signature="e#11163#11312#0" />
               </folding>
             </state>
           </provider>
@@ -78,8 +97,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/all_user_data.pkl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+            <state>
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -88,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="146">
+              <first_editor>
                 <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               </first_editor>
               <second_editor />
@@ -295,58 +314,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Psoft/aula2/httpserver/miniweb.py">
+    <entry file="file://$USER_HOME$/Psoft/aula2/httpserver/miniweb.py" />
+    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/replykeyboardremove.py" />
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-142">
-          <caret line="90" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+        <state relative-caret-position="343">
+          <caret line="342" selection-start-line="342" selection-end-line="342" />
+          <folding>
+            <element signature="e#16#34#0" expanded="true" />
+            <element signature="e#832#1199#0" />
+            <element signature="e#1229#2012#0" />
+            <element signature="e#2044#2877#0" />
+            <element signature="e#2925#4354#0" />
+            <element signature="e#4396#5426#0" />
+            <element signature="e#5469#6906#0" />
+            <element signature="e#6951#8479#0" />
+            <element signature="e#8523#9332#0" />
+            <element signature="e#9375#10254#0" />
+            <element signature="e#10293#10747#0" />
+            <element signature="e#10780#11130#0" />
+            <element signature="e#11163#11312#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/all_user_data.pkl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="146">
+          <first_editor>
             <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/all_user_data.pkl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/replykeyboardremove.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-            <element signature="e#156#252#0" />
-            <element signature="e#864#1232#0" />
-            <element signature="e#1262#2045#0" />
-            <element signature="e#2077#2910#0" />
-            <element signature="e#4451#5481#0" />
-            <element signature="e#5513#6950#0" />
-            <element signature="e#6984#8512#0" />
-            <element signature="e#8545#9354#0" />
-            <element signature="e#9386#10265#0" />
-            <element signature="e#10293#10855#0" />
-            <element signature="e#10789#11139#0" />
-            <element signature="e#9909#10058#0" />
-            <marker date="1554146376696" expanded="true" signature="540:541" ph="..." />
-            <marker date="1554146376696" expanded="true" signature="10774:11133" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

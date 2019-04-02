@@ -51,11 +51,11 @@ def help(bot, update):
              '\n/help para listar os comandos'
              '\n/listar para exibir as listas'
              '\n/exibirLista NomeDaLista para exibir uma lista específica'
-             '\n/criarLista NomeDaLista para criar novas listas'
-             '\n/criarEvento NomeDaLista NomeDoEvento para criar novos eventos'
-             '\n/deletarEvento NomeDaLista NomeDoEvento para deletar um evento'
-             '\n/deletarLista NomeDaLista para deletar um evento'
-             '\n/limparLista NomeDaLista para deletar todos os eventos de uma lista',
+             '\n/criar_lista NomeDaLista para criar novas listas'
+             '\n/criar_evento NomeDaLista NomeDoEvento para criar novos eventos'
+             '\n/deletar_evento NomeDaLista NomeDoEvento para deletar um evento'
+             '\n/deletar_lista NomeDaLista para deletar um evento'
+             '\n/limpar_lista NomeDaLista para deletar todos os eventos de uma lista',
         parse_mode=ParseMode.MARKDOWN
     )
 
@@ -331,14 +331,14 @@ help_handler = CommandHandler("help", help)
 unknown_handler = MessageHandler([Filters.command], unknown)
 
 listar_handler = CommandHandler("listar", listar)
-exibirlistaunica_handler = CommandHandler("exibirLista", exibirlistaunica, pass_args=True)
+exibirlistaunica_handler = CommandHandler("exibir_lista", exibirlistaunica, pass_args=True)
 
-criarLista_handler = CommandHandler("criarLista", criarlista, pass_args=True)
-criarEvento_handler = CommandHandler("criarEvento", criarevento, pass_args=True)
+criarLista_handler = CommandHandler("criar_lista", criarlista, pass_args=True)
+criarEvento_handler = CommandHandler("criar_evento", criarevento, pass_args=True)
 
-deletarevento_handler = CommandHandler("deletarEvento", deletarevento, pass_args=True)
-deletarlista_handler = CommandHandler("deletarLista", deletarlista, pass_args=True)
-limparlista_handler = CommandHandler("limparLista", limparlista, pass_args=True)
+deletarevento_handler = CommandHandler("deletar_evento", deletarevento, pass_args=True)
+deletarlista_handler = CommandHandler("deletar_lista", deletarlista, pass_args=True)
+limparlista_handler = CommandHandler("limpar_lista", limparlista, pass_args=True)
 
 mostrarbotoes_handler = CommandHandler("botoes", mostrarbotoes)
 botoes_handler = CallbackQueryHandler(button)

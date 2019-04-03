@@ -22,7 +22,7 @@ except:
 
 
 # check for new messages --> polling
-token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
+token = 'asdasd818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.
@@ -85,9 +85,15 @@ def listar(bot, update):
         )
 
 
-def exibirlistaunica(bot, update, args):
+def exibirlistaunica(bot, update):
     user_id = update.message.from_user.id
-    nome_lista = ' '.join(args).strip()
+    # nome_lista = ' '.join(args).strip()
+
+    try:
+        mostrarbotoes(bot, update)
+    except:
+        selected = ""
+    nome_lista = selected
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(

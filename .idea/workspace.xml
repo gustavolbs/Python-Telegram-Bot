@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_user_data.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/all_user_data.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +47,9 @@
     <session id="1614194553">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -72,20 +69,61 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="297" selection-start-line="297" selection-end-line="297" />
+            <state relative-caret-position="148">
+              <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
               <folding>
-                <element signature="e#16#34#0" expanded="true" />
+                <element signature="e#245#341#0" />
+                <element signature="e#364#491#0" />
+                <element signature="e#505#538#0" />
                 <element signature="e#832#1199#0" />
-                <element signature="e#1229#2012#0" />
-                <element signature="e#2044#2877#0" />
-                <element signature="e#2930#4124#0" />
-                <element signature="e#4396#5426#0" />
-                <element signature="e#5114#6567#0" />
-                <element signature="e#6951#8479#0" />
-                <element signature="e#8523#9332#0" />
-                <element signature="e#9375#10254#0" />
-                <element signature="e#11163#11312#0" />
+                <element signature="e#1229#2018#0" />
+                <element signature="e#1300#1973#0" />
+                <element signature="e#2050#2885#0" />
+                <element signature="e#2138#2436#0" />
+                <element signature="e#2456#2885#0" />
+                <element signature="e#2535#2735#0" />
+                <element signature="e#3061#3359#0" />
+                <element signature="e#3379#4089#0" />
+                <element signature="e#3458#4089#0" />
+                <element signature="e#3526#4089#0" />
+                <element signature="e#3650#3791#0" />
+                <element signature="e#4131#5161#0" />
+                <element signature="e#4243#4985#0" />
+                <element signature="e#4300#4589#0" />
+                <element signature="e#4368#4589#0" />
+                <element signature="e#4748#4815#0" />
+                <element signature="e#5005#5150#0" />
+                <element signature="e#5204#6645#0" />
+                <element signature="e#5414#6493#0" />
+                <element signature="e#5491#6478#0" />
+                <element signature="e#5622#6145#0" />
+                <element signature="e#5700#5958#0" />
+                <element signature="e#6001#6145#0" />
+                <element signature="e#6266#6478#0" />
+                <element signature="e#6513#6645#0" />
+                <element signature="e#6690#8218#0" />
+                <element signature="e#6900#8055#0" />
+                <element signature="e#6977#8055#0" />
+                <element signature="e#7108#7722#0" />
+                <element signature="e#7182#7515#0" />
+                <element signature="e#7558#7722#0" />
+                <element signature="e#7843#8055#0" />
+                <element signature="e#8075#8207#0" />
+                <element signature="e#8262#9071#0" />
+                <element signature="e#8414#9060#0" />
+                <element signature="e#8537#8733#0" />
+                <element signature="e#8845#9060#0" />
+                <element signature="e#9114#9993#0" />
+                <element signature="e#9266#9982#0" />
+                <element signature="e#9389#9673#0" />
+                <element signature="e#9786#9982#0" />
+                <element signature="e#10032#10486#0" />
+                <element signature="e#10145#10300#0" />
+                <element signature="e#10518#10848#0" />
+                <element signature="e#10881#11030#0" />
+                <element signature="e#12256#12279#0" />
+                <element signature="e#12313#12402#0" />
+                <element signature="e#12373#12402#0" />
               </folding>
             </state>
           </provider>
@@ -95,7 +133,7 @@
         <entry file="file://$PROJECT_DIR$/all_user_data.pkl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+              <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -104,7 +142,7 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
+              <first_editor relative-caret-position="360">
                 <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               </first_editor>
               <second_editor />
@@ -313,40 +351,81 @@
     </entry>
     <entry file="file://$USER_HOME$/Psoft/aula2/httpserver/miniweb.py" />
     <entry file="file://$PROJECT_DIR$/env/local/lib/python2.7/site-packages/telegram/replykeyboardremove.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+          <folding>
+            <element signature="e#245#341#0" />
+            <element signature="e#364#491#0" />
+            <element signature="e#505#538#0" />
+            <element signature="e#832#1199#0" />
+            <element signature="e#1229#2018#0" />
+            <element signature="e#1300#1973#0" />
+            <element signature="e#2050#2885#0" />
+            <element signature="e#2138#2436#0" />
+            <element signature="e#2456#2885#0" />
+            <element signature="e#2535#2735#0" />
+            <element signature="e#3061#3359#0" />
+            <element signature="e#3379#4089#0" />
+            <element signature="e#3458#4089#0" />
+            <element signature="e#3526#4089#0" />
+            <element signature="e#3650#3791#0" />
+            <element signature="e#4131#5161#0" />
+            <element signature="e#4243#4985#0" />
+            <element signature="e#4300#4589#0" />
+            <element signature="e#4368#4589#0" />
+            <element signature="e#4748#4815#0" />
+            <element signature="e#5005#5150#0" />
+            <element signature="e#5204#6645#0" />
+            <element signature="e#5414#6493#0" />
+            <element signature="e#5491#6478#0" />
+            <element signature="e#5622#6145#0" />
+            <element signature="e#5700#5958#0" />
+            <element signature="e#6001#6145#0" />
+            <element signature="e#6266#6478#0" />
+            <element signature="e#6513#6645#0" />
+            <element signature="e#6690#8218#0" />
+            <element signature="e#6900#8055#0" />
+            <element signature="e#6977#8055#0" />
+            <element signature="e#7108#7722#0" />
+            <element signature="e#7182#7515#0" />
+            <element signature="e#7558#7722#0" />
+            <element signature="e#7843#8055#0" />
+            <element signature="e#8075#8207#0" />
+            <element signature="e#8262#9071#0" />
+            <element signature="e#8414#9060#0" />
+            <element signature="e#8537#8733#0" />
+            <element signature="e#8845#9060#0" />
+            <element signature="e#9114#9993#0" />
+            <element signature="e#9266#9982#0" />
+            <element signature="e#9389#9673#0" />
+            <element signature="e#9786#9982#0" />
+            <element signature="e#10032#10486#0" />
+            <element signature="e#10145#10300#0" />
+            <element signature="e#10518#10848#0" />
+            <element signature="e#10881#11030#0" />
+            <element signature="e#12256#12279#0" />
+            <element signature="e#12313#12402#0" />
+            <element signature="e#12373#12402#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/all_user_data.pkl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="16" column="2" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="297" selection-start-line="297" selection-end-line="297" />
-          <folding>
-            <element signature="e#16#34#0" expanded="true" />
-            <element signature="e#832#1199#0" />
-            <element signature="e#1229#2012#0" />
-            <element signature="e#2044#2877#0" />
-            <element signature="e#2930#4124#0" />
-            <element signature="e#4396#5426#0" />
-            <element signature="e#5114#6567#0" />
-            <element signature="e#6951#8479#0" />
-            <element signature="e#8523#9332#0" />
-            <element signature="e#9375#10254#0" />
-            <element signature="e#11163#11312#0" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

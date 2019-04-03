@@ -1,4 +1,5 @@
-# coding: utf-8
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import sys, pickle
 from telegram import ParseMode, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackQueryHandler
@@ -22,7 +23,7 @@ except:
 
 
 # check for new messages --> polling
-token = 'asdasd818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
+token = '818262027:AAHwNrZal6dNo4fgYugGNZewtU2knok61-g'
 updater = Updater(token=token)
 
 # allows to register handler --> command, text, video, audio, etc.
@@ -63,37 +64,33 @@ def help(bot, update):
 def listar(bot, update):
     user_id = update.message.from_user.id
 
-    if len(all_user_data[user_id]) == 0:
-        bot.send_message(
-            chat_id=update.message.chat_id,
-            text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criar_lista" passando um nome para criar uma nova lista.\nExemplo: "/criar_lista A Fazeres"',
-            parse_mode=ParseMode.MARKDOWN
-        )
-
-    else:
-        mensagem = ""
-        for i in range(len(all_user_data[user_id])):
-            mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
-            for j in all_user_data[user_id][i]["itens"]:
-                mensagem += "\n   • {}".format(j)
-            mensagem += "\n\n"
-
-        bot.send_message(
-            chat_id=update.message.chat_id,
-            text=mensagem,
-            parse_mode=ParseMode.MARKDOWN
-        )
-
-
-def exibirlistaunica(bot, update):
-    user_id = update.message.from_user.id
-    # nome_lista = ' '.join(args).strip()
-
     try:
-        mostrarbotoes(bot, update)
-    except:
-        selected = ""
-    nome_lista = selected
+        if len(all_user_data[user_id]) == 0:
+            bot.send_message(
+                chat_id=update.message.chat_id,
+                text='Você não possui *nenhuma* lista.\nQue tal criar uma? Utilize o comando "/criar_lista" passando um nome para criar uma nova lista.\nExemplo: "/criar_lista A Fazeres"',
+                parse_mode=ParseMode.MARKDOWN
+            )
+
+        else:
+            mensagem = ""
+            for i in range(len(all_user_data[user_id])):
+                mensagem += "* {}:*".format(all_user_data[user_id][i]["nome"])
+                for j in all_user_data[user_id][i]["itens"]:
+                    mensagem += "\n   • {}".format(j)
+                mensagem += "\n\n"
+
+            bot.send_message(
+                chat_id=update.message.chat_id,
+                text=mensagem,
+                parse_mode=ParseMode.MARKDOWN
+            )
+    except Exception as e:
+        print e
+
+def exibirlistaunica(bot, update, args):
+    user_id = update.message.from_user.id
+    nome_lista = ' '.join(args).strip()
 
     if len(all_user_data[user_id]) == 0:
         bot.send_message(
@@ -106,10 +103,10 @@ def exibirlistaunica(bot, update):
         mensagem = ""
         for i in range(len(all_user_data[user_id])):
             if nome_lista == all_user_data[user_id][i]["nome"]:
-                mensagem += "* {}:*".format(nome_lista)
+                mensagem += "* {}:*".format(nome_lista.capitalize())
                 if len(all_user_data[user_id][i]["itens"]) > 0:
                     for j in all_user_data[user_id][i]["itens"]:
-                        mensagem += "\n   • {}".format(j)
+                        mensagem += "\n   • {}".format(j.capitalize())
                     mensagem += "\n\n"
                 else:
                     mensagem = "Você não possui itens na lista."
@@ -123,7 +120,7 @@ def exibirlistaunica(bot, update):
 
 def criarlista(bot, update, args):
     user_id = update.message.from_user.id
-    nome_lista = ' '.join(args).strip()
+    nome_lista = ' '.join(args).encode('utf-8').strip()
 
     if nome_lista != "":
         for i in range(len(all_user_data[user_id])):
@@ -157,27 +154,29 @@ def criarlista(bot, update, args):
 
 def criarevento(bot, update, args):
     user_id = update.message.from_user.id
-    param = ' '.join(args).strip()
-    nome_lista = param.split(' ', 1)[0]
-    nome_evento = param.split(' ', 1)[1]
+    param = ' '.join(args).encode('utf-8').strip()
+    nome_lista = param.split(';', 1)[0]
+    nome_evento = param.split(';')[1:]
 
     if nome_lista != "" and nome_evento != "":
         listas = ""
         for i in range(len(all_user_data[user_id])):
             listas += "\n" + all_user_data[user_id][i]["nome"]
             if nome_lista == all_user_data[user_id][i]["nome"]:
-                if nome_evento not in all_user_data[user_id][i]["itens"]:
-                    all_user_data[user_id][i]["itens"].append(nome_evento)
-                    bot.send_message(
-                        chat_id=update.message.chat_id,
-                        text='Evento foi criado com sucesso.'
-                    )
-                    break
-                else:
-                    bot.send_message(
-                        chat_id=update.message.chat_id,
-                        text='Evento já existe.'
-                    )
+                for j in nome_evento:
+                    if j not in all_user_data[user_id][i]["itens"] and j != "":
+                        print ("Chegou dentro")
+                        all_user_data[user_id][i]["itens"].append(j)
+                        bot.send_message(
+                            chat_id=update.message.chat_id,
+                            text='Evento foi criado com sucesso.'
+                        )
+                    else:
+                        bot.send_message(
+                            chat_id=update.message.chat_id,
+                            text='Evento {} já existe.'.format(j)
+                        )
+                break
 
             if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
                 bot.send_message(
@@ -197,27 +196,23 @@ def criarevento(bot, update, args):
 def deletarevento(bot, update, args):
     user_id = update.message.from_user.id
     param = ' '.join(args).strip()
-    nome_lista = param.split(' ', 1)[0]
-    nome_evento = param.split(' ', 1)[1]
+    nome_lista = param.split(';', 1)[0]
+    nome_evento = param.split(';')[1:]
 
     if nome_lista != "" and nome_evento != "":
         listas = ""
         for i in range(len(all_user_data[user_id])):
             listas += "\n" + all_user_data[user_id][i]["nome"]
             if nome_lista == all_user_data[user_id][i]["nome"]:
-                if nome_evento in all_user_data[user_id][i]["itens"]:
-                    index = all_user_data[user_id][i]["itens"].index(nome_evento)
-                    all_user_data[user_id][i]["itens"].pop(index)
-                    bot.send_message(
-                        chat_id=update.message.chat_id,
-                        text='Evento foi deletado com sucesso.'
-                    )
-                    break
-                else:
-                    bot.send_message(
-                        chat_id=update.message.chat_id,
-                        text='Evento não existe ou já foi deletado.'
-                    )
+                for j in all_user_data[user_id][i]["itens"]:
+                    if j in all_user_data[user_id][i]["itens"]:
+                        index = all_user_data[user_id][i]["itens"].index(j)
+                        all_user_data[user_id][i]["itens"].pop(index)
+                        bot.send_message(
+                            chat_id=update.message.chat_id,
+                            text='Evento foi deletado com sucesso.'
+                        )
+                break
 
             if nome_lista != all_user_data[user_id][i]["nome"] and i == len(all_user_data[user_id])-1:
                 bot.send_message(

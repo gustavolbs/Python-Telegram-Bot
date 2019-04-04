@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/all_user_data.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/all_user_data.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="af250087-882b-4152-90c6-54805f43ee9a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +28,8 @@
         <counts>
           <entry key="project.closed" value="1" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -83,24 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
-              <folding>
-                <element signature="e#88#106#0" expanded="true" />
-                <element signature="e#317#413#0" />
-                <element signature="e#436#563#0" />
-                <element signature="e#577#610#0" />
-                <element signature="e#904#1271#0" />
-                <element signature="e#1301#2090#0" />
-                <element signature="e#3005#4161#0" />
-                <element signature="e#4310#5355#0" />
-                <element signature="e#6809#8446#0" />
-                <element signature="e#8334#9143#0" />
-                <element signature="e#9186#10065#0" />
-                <element signature="e#10104#10558#0" />
-                <element signature="e#10590#10920#0" />
-                <element signature="e#10953#11102#0" />
-              </folding>
+            <state relative-caret-position="219">
+              <caret line="164" column="63" selection-start-line="164" selection-start-column="63" selection-end-line="164" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -108,7 +89,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/telegram/parsemode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
+            <state relative-caret-position="528">
               <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
             </state>
           </provider>
@@ -167,7 +148,7 @@
   <component name="ProjectFrameBounds" extendedState="4">
     <option name="x" value="960" />
     <option name="y" value="27" />
-    <option name="width" value="960" />
+    <option name="width" value="950" />
     <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -276,8 +257,7 @@
     <option name="totallyTimeSpent" value="20717000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="27" width="960" height="1053" extended-state="4" />
-    <editor active="true" />
+    <frame x="960" y="27" width="950" height="1053" extended-state="4" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.12335266" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -335,6 +315,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="164" column="63" selection-start-line="164" selection-start-column="63" selection-end-line="164" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/telegram/parsemode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -342,36 +336,6 @@
             <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/lib/python2.7/site-packages/telegram/parsemode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
-          <folding>
-            <element signature="e#88#106#0" expanded="true" />
-            <element signature="e#317#413#0" />
-            <element signature="e#436#563#0" />
-            <element signature="e#577#610#0" />
-            <element signature="e#904#1271#0" />
-            <element signature="e#1301#2090#0" />
-            <element signature="e#3005#4161#0" />
-            <element signature="e#4310#5355#0" />
-            <element signature="e#6809#8446#0" />
-            <element signature="e#8334#9143#0" />
-            <element signature="e#9186#10065#0" />
-            <element signature="e#10104#10558#0" />
-            <element signature="e#10590#10920#0" />
-            <element signature="e#10953#11102#0" />
-          </folding>
         </state>
       </provider>
     </entry>

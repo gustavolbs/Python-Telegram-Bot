@@ -86,7 +86,7 @@ def listar(bot, update):
                 parse_mode=ParseMode.MARKDOWN
             )
     except Exception as e:
-        print e
+        print (e)
 
 def exibirlistaunica(bot, update, args):
     user_id = update.message.from_user.id
